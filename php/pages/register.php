@@ -30,7 +30,7 @@ if (isset($_POST["register"])) {
         $user = $pdo->prepare(
             "INSERT INTO users (name, password) VALUES (?,?)",
         );
-        $user->execute([$name, hash("sha256", $password)]);
+        $user->execute([$name, password_hash($password, PASSWORD_DEFAULT)]);
 
         $_SESSION["message"] = "Успешная регистрация";
 
