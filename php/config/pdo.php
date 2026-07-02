@@ -1,9 +1,10 @@
 <?php
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=php;charset=utf8", "root", "password");
+    $pdo = new PDO("mysql:host=localhost;dbname=test-php;charset=utf8", "root", "password");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+

@@ -1,9 +1,11 @@
 <?php
 session_start();
-require_once "php/config/pdo.php"
+require_once "php/config/pdo.php";
+require_once "php/config/pdo.php";
+
+$currentPage = $_GET["page"] ?? "catalog";
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -17,8 +19,10 @@ require_once "php/config/pdo.php"
 <div class="container">
 
     <?php require "./php/components/header.php"; ?>
-
     <?php require "./php/components/toast.php" ?>
+
+    <?php include("./php/pages/$currentPage.php"); ?>
+
 
 </div>
 </body>
